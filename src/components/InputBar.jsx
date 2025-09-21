@@ -29,7 +29,7 @@ function InputBar() {
                     checked={lowercase}
                     onChange={(e) => setLowercase(e.target.checked)}
                 />
-                Lettres minuscules (a-z)
+                    <span style={{ marginLeft: "8px" }}>Lettres minuscules (a-z)</span>
             </label>
             <label>
                 <input
@@ -37,7 +37,7 @@ function InputBar() {
                     checked={uppercase}
                     onChange={(e) => setUppercase(e.target.checked)}
                 />
-                Lettres MAJUSCULES (A-Z)
+                <span style={{ marginLeft: "8px" }}>Lettres MAJUSCULES (A-Z)</span>
             </label>
             <label>
                 <input
@@ -45,7 +45,7 @@ function InputBar() {
                     checked={numbers}
                     onChange={(e) => setNumbers(e.target.checked)}
                 />
-                Chiffres (0-9)
+                <span style={{ marginLeft: "8px" }}>Chiffres (0-9)</span>
             </label>
             <label>
                 <input
@@ -53,7 +53,7 @@ function InputBar() {
                     checked={symbols}
                     onChange={(e) => setSymbols(e.target.checked)}
                 />
-                Caractères spéciaux (!@#...)
+                <span style={{ marginLeft: "8px" }}>Caractères spéciaux (!@#...)</span>
             </label>
 
             <p>

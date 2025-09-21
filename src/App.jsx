@@ -9,7 +9,8 @@ function App() {
 
       <h1>Générateur de mot de passe sécurisé</h1>
 
-      <p>Choisis la longueur et les types de caractères, puis génère un mot de passe fort et copie-le en un clic</p>
+      <p marginBottom="0px">
+        Choisis la longueur et les types de caractères, puis génère un mot de passe fort et copie-le en un clic</p>
 
       <div id="DansApp">
           <InputBar />
