@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(185, 36, 36, 0.87);
-  background-color: #e3dddd;
+  color: rgb(255, 255, 255);
+  background-color: #2d3250;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,21 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  text-align: center;
   min-width: 320px;
   min-height: 100vh;
+  place-content: center;
+  place-items: center;
 }
 
 h1 {
@@ -38,13 +31,16 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.5em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+
+  margin-left: 5px;
+  margin-right: 5px;
 }
 button:hover {
   border-color: #646cff;
@@ -54,18 +50,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #afd0ed;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
+
 /* style InputBar.jsx */
 #youyou {
   display: flex;
@@ -74,15 +60,13 @@ button:focus-visible {
   width: 220px;
   margin: 20px auto;
   text-align: left;
-  background-color: #551a1a;
   
-
   width: 60%;       /* largeur de la section */
   max-width: 400px; /* largeur max si l'écran est grand */
   height: 280px;    /* hauteur fixe */
   min-height: 200px; /* hauteur minimale */
 
-  background-color: #f0f0f0;
+  background-color: #2d3250;
   margin: 20px auto; /* centrer horizontalement */
   padding: 20px;
   padding-top: 0px;
@@ -105,7 +89,7 @@ button:focus-visible {
 }
 
 #App{
-  background-color: #551a1a;
+  background-color: #424769;
   border-radius: 12px;
   width: 100%; 
   max-width: 1200px; 
@@ -119,4 +103,10 @@ button:focus-visible {
   align-items: flex-start; /* Aligner en haut */
   gap: 20px; /* Espacement entre les éléments */
   margin-top: 20px; /* Marge supérieure pour espacer du titre */
+}
+#resultat {
+  background-color: #676f9d;
+  padding: 10px;
+  content-item: center;
+  border-radius: 8px;
 }

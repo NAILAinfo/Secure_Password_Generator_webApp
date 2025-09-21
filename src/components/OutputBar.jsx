@@ -3,7 +3,7 @@ import React from 'react';
 function OutputBar() {
    return(
         <section id="youyou" >
-            <p>Résultat</p>
+            <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Résultat</p>
 
             <div id="resultat">
                                
@@ -11,11 +11,10 @@ function OutputBar() {
                 <button>Copier</button>
             </div>
 
-            <div>
-                <p>Force</p>
+           
+                <p>Force   </p>
                 <p>Fort :  </p>
-            </div>
-
+        
             <p>Options avancées <br />Tu peux régénérer autant que nécessaire. Clique Copier pour coller dans ton gestionnaire de mots de passe.</p>
         </section>
     )
