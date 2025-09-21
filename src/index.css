@@ -74,13 +74,49 @@ button:focus-visible {
   width: 220px;
   margin: 20px auto;
   text-align: left;
+  background-color: #551a1a;
+  
+
+  width: 60%;       /* largeur de la section */
+  max-width: 400px; /* largeur max si l'écran est grand */
+  height: 280px;    /* hauteur fixe */
+  min-height: 200px; /* hauteur minimale */
+
+  background-color: #f0f0f0;
+  margin: 20px auto; /* centrer horizontalement */
+  padding: 20px;
+  padding-top: 0px;
+  border-radius: 12px;
 
 }
 #youyou p {
-   width: 310px;
+   width: 100%;
 }
 
 #mot {
   margin-left: 50px;
   margin-right: 0px ;
+  margin-bottom: 5px;
+}
+#input1 {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#App{
+  background-color: #551a1a;
+  border-radius: 12px;
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto;  
+  height: 500px;
+  padding: 20px;    /* hauteur fixe */
+}
+#DansApp{
+  display: flex;
+  justify-content: space-around; /* Espace égal entre les éléments */
+  align-items: flex-start; /* Aligner en haut */
+  gap: 20px; /* Espacement entre les éléments */
+  margin-top: 20px; /* Marge supérieure pour espacer du titre */
 }

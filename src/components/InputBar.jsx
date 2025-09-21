@@ -15,6 +15,7 @@ function InputBar() {
         <section id="youyou" >
             <p id="mot">Longueur : {value}</p>
             <input
+                id="input1"
                 type="range"
                 min="6"
                 max="64"
