@@ -27,7 +27,7 @@ function OutputBar({ options }) {
             <div id="resultat">
                 <p id="final">{password}</p>   
                 <button id="gnr"onClick={handleGenerate} >Générer</button> 
-                <button id="copy" className="btn btn-primary" onClick={handleCopy}>
+                <button id="copy"  onClick={handleCopy}><Copier></Copier>
                 </button>
             </div>
             
