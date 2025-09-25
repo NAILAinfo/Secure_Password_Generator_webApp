@@ -1,20 +1,36 @@
 import React from 'react';
+import { useState } from 'react';
 
-function OutputBar() {
+import { generatePassword } from './generatePassword';
+function OutputBar({ options }) {
+
+    const [password, setPassword] = useState('');
+
+    const handleGenerate = () => {
+        try {
+            const pwd = generatePassword(options);
+            setPassword(pwd);
+        } catch (error) {
+            alert(error.message); // Affiche l'exception si aucune option n'est choisie
+        }
+    };
+     const handleCopy = () => {
+        if (password) {
+            navigator.clipboard.writeText(password);
+            alert('Mot de passe copié !');
+        }
+    };
+
    return(
         <section id="youyou">
             <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Résultat</p>
             <div id="resultat">
-                <output></output>              
-                <button  >Générer</button> 
-                <button  >Copier</button>
+                <p id="final">{password}</p>   
+                <button id="gnr"onClick={handleGenerate} >Générer</button> 
+                <button id="copy" className="btn btn-primary" onClick={handleCopy}>
+                </button>
             </div>
-            <p>Force</p> 
-            <p>Fort : {10}%</p> 
-            <p>
-                Options avancées <br />
-                Tu peux régénérer autant que nécessaire. Clique Copier pour coller dans ton gestionnaire de mots de passe.
-            </p>
+            
         </section>
     );
 }

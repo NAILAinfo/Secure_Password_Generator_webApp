@@ -106,13 +106,44 @@ button:focus-visible {
   margin-top: 20px; /* Marge supérieure pour espacer du titre */
 }
 #resultat {
+  margin-top: 0px;
   background-color: #676f9d;
   padding: 10px;
   place-items: center;
   border-radius: 8px;
   margin: 0;
+  display: flex;
 }
-output {
-  width: 100px;
-  background-color: azure;
+#final {
+  height: 40px;
+  width: 40px;
+  background-color: #5f6892;
+  border-radius: 8px;
+  flex: 1 ;
 }
+
+#copy{
+  margin: 5px;
+  background-color: rgb(4, 99, 32);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-color:rgb(4, 99, 32); ;
+
+}
+#gnr{
+  margin: 5px;
+  background-color: rgb(2, 62, 201);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-color:rgb(2, 62, 201); 
+  padding: 10px;
+}
+/*
+#gnr:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/*
+    #copy:hover {
+   transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+*/               
