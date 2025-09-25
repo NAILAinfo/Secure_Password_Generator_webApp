@@ -2,43 +2,69 @@ import React from "react";
 import InputBar from "./InputBar";
 import OutputBar from "./OutputBar";
 
+function exception() {
+  throw new Error("Tu dois choisir au moins une option");
+}
+
 function E_ensemble({ includeLowercase, includeUppercase, includeNumbers, includeSymbols }) {
   let ensemble = "";
+
   if (includeLowercase) ensemble += "abcdefghijklmnopqrstuvwxyz";
   if (includeUppercase) ensemble += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   if (includeNumbers) ensemble += "0123456789";
   if (includeSymbols) ensemble += "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+
   return ensemble;
 }
 
-function generer(ensemble, length) {
-  let resultat = "";
-  for (let i = 0; i < length; i++) {
-    const index = Math.floor(Math.random() * ensemble.length);
-    resultat += ensemble[index];
-  }
-  return resultat;
+function pickRandomFrom(str) {
+  return str[Math.floor(Math.random() * str.length)];
 }
 
-function exception() {
-  throw new Error("Tu dois choisir au moins une option");
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+function generer({ length, includeLowercase, includeUppercase, includeNumbers, includeSymbols }) {
+  if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSymbols) {
+    exception();
+  }
+
+  const pool = E_ensemble({ includeLowercase, includeUppercase, includeNumbers, includeSymbols });
+
+  const resultat = [];
+
+  if (includeLowercase) {
+    resultat.push(pickRandomFrom("abcdefghijklmnopqrstuvwxyz"));
+  }
+  if (includeUppercase) {
+    resultat.push(pickRandomFrom("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+  }
+  if (includeNumbers) {
+    resultat.push(pickRandomFrom("0123456789"));
+  }
+  if (includeSymbols) {
+    resultat.push(pickRandomFrom("!@#$%^&*()_+~`|}{[]:;?><,./-="));
+  }
+
+  while (resultat.length < length) {
+    resultat.push(pickRandomFrom(pool));
+  }
+
+  return shuffle(resultat).join("");
 }
 
 function GeneratePassword({ length, includeLowercase, includeUppercase, includeNumbers, includeSymbols }) {
   let mot = "";
 
   try {
-    if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSymbols) {
-      exception();
-    }
-
-    mot = generer(
-      E_ensemble({ includeLowercase, includeUppercase, includeNumbers, includeSymbols }),
-      length
-    );
+    mot = generer({ length, includeLowercase, includeUppercase, includeNumbers, includeSymbols });
   } catch (e) {
-    console.error("Erreur attrapée :", e.message);
-    mot = "⚠️ Aucune option sélectionnée !";
+    alert(e.message);
+    mot = "";
   }
 
   return (
