@@ -17,9 +17,9 @@ function OutputBar({ password, onGenerate }) {
             <div id="resultat">
                   <input id="final" type="text" readOnly value={password} />
             </div>
-            <div id="buttons">
-            <button id="gnr"onClick={onGenerate} >Générer</button> 
-            <button id="copy" onClick={handleCopy}>Copier</button>
+            <div id="butttons">
+                <button id="gnr"onClick={onGenerate} >Générer</button> 
+                <button id="copy" onClick={handleCopy}>Copier</button>
             </div>
             <PasswordStrength password={password} />
         </section>
