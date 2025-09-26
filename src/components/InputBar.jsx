@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'; 
 
 function InputBar({ onOptionsChange }) {
-    const [length, setLength] = useState(6);
+    const [length, setLength] = useState(10);
     const [lowercase, setLowercase] = useState(false);
     const [uppercase, setUppercase] = useState(false);
     const [numbers, setNumbers] = useState(false);

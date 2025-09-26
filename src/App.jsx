@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 function App() {
   const [options, setOptions] = useState({
-    value: 6,
+    value: 10,
     lowercase: false,
     uppercase: false,
     numbers: false,
@@ -71,12 +71,14 @@ function App() {
 
   return (
     <section id="App">
+
       <h1>Générateur de mot de passe sécurisé</h1>
       <p style={{ marginBottom: "0px" }}>
         Choisis la longueur et les types de caractères, puis génère un mot de passe fort et copie-le en un clic
       </p>
+
       <div id="DansApp">
-        <InputBar options={options} onOptionsChange={setOptions} />
+          <InputBar options={options} onOptionsChange={setOptions} />
           <OutputBar  options={options} password={password} onGenerate={generatePassword} />
       </div>
     </section>
