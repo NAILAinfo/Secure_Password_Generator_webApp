@@ -1,7 +1,6 @@
 import React from "react";
-
-function PasswordStrength({ password }) {
-
+import Progress from "./Progress";
+function PasswordStrength({ password = "" }) {
   const calculeStrength = () => {
     let score = 0;
     const length = password.length;
@@ -22,10 +21,12 @@ function PasswordStrength({ password }) {
 
   const strength = calculeStrength();
 
+  
+
   return (
     <section>
       <p id="force">Force: {strength}%</p>
-      <progress  value={strength} max="100"></progress>
+      <Progress strength={strength} />
     </section>
   );
 }
